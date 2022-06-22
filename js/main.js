@@ -113,5 +113,22 @@
         items: 1
     });
     
+    //Readable
+    $('#clickMe').click(function(event) {
+        var mytext = $('#myText').val();
+    
+    
+        $('<div id="dialog">'+mytext+'</div>').appendTo('body');        
+        event.preventDefault();
+    
+            $("#dialog").dialog({                   
+                width: 600,
+                modal: true,
+                close: function(event, ui) {
+                    $("#dialog").remove();
+                    }
+                });
+        }); //close click
+
 })(jQuery);
 
